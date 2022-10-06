@@ -18,8 +18,27 @@ class Clientes:
             cliente = Cliente(dni, nombre, apellido)
             lista.append(cliente)
 
+    @staticmethod
+    def guardar():
+        with open(config.DATABASE_PATH, "w", newline="\n") as fichero:
+            writer = csv.writer(fichero, delimiter=";")
+            for c in Clientes.listas:
+                writer.writerow((c.dni, c.nombre, c.apellido))
 
+    @staticmethod
     def buscar(dni):
         for cliente in Clientes.lista:
             if cliente.dni == dni:
                 return cliente
+    
+    @staticmethod
+    def crear(dni, nombre, apellido):
+        cliente = Cliente(dni,nombre, apellido)
+        Cliente.lista.append(cliente)
+        return cliente
+    
+    @staticmethod
+    def modificar(dni, nombre, apellido):
+        for i, cliente in enumerate(Clientes.lista):
+            if cliente.dni == dni:
+                
