@@ -8,7 +8,6 @@ import config
 class TestDatabase(unittest.TestCase):
 
     def setUp(self):
-        #se ejecuta antes de cada prueba
         db.Clientes.lista = [
             db.Cliente('15J', 'Marta', 'Pérez'),
             db.Cliente('48H', 'Manolo', 'López'),
@@ -53,7 +52,7 @@ class TestDatabase(unittest.TestCase):
         dni, nombre, apellido=None, None, None
         with open (config.DATABASE_PATH, newline="\n") as fichero:
             reader = csv.reader(fichero, delimiter=";")
-            dni, nombre, apellido = next(reader) #primera linea del iterador
+            dni, nombre, apellido = next(reader)
         
         self.assertEqual(dni, '28Z')
         self.assertEqual(nombre, 'Mariana')
