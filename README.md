@@ -1,5 +1,5 @@
 # Proyecto-Gestor-Clientes
-El link a nuestro repositorio es: 
+El link a nuestro repositorio es: https://github.com/crltsnch/Proyecto-Gestor-Clientes.git
 
 ## Descripción
 Vamos a crear un programa poniendo a prueba lo que sabemos de Python:
