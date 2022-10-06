@@ -2,6 +2,7 @@ import csv
 import config
 
 class Cliente:
+
     def __init__(self, dni, nombre, apellido):
         self.dni = dni
         self.nombre = nombre
@@ -11,6 +12,7 @@ class Cliente:
         return f"({self.dni}) {self.nombre} {self.apellido}"
 
 class Clientes:
+
     lista = []
     with open(config.DATABASE_PATH, newline="\n") as fichero:
         reader =csv.reader(fichero, delimiter=";")
