@@ -15,7 +15,7 @@ class Clientes:
 
     lista = []
     with open(config.DATABASE_PATH, newline="\n") as fichero:
-        reader =csv.reader(fichero, delimiter=";")
+        reader = csv.reader(fichero, delimiter=";")
         for dni, nombre, apellido in reader:
             cliente = Cliente(dni, nombre, apellido)
             lista.append(cliente)
@@ -24,7 +24,7 @@ class Clientes:
     def guardar():
         with open(config.DATABASE_PATH, "w", newline="\n") as fichero:
             writer = csv.writer(fichero, delimiter=";")
-            for c in Clientes.listas:
+            for c in Clientes.lista:
                 writer.writerow((c.dni, c.nombre, c.apellido))
 
     @staticmethod
@@ -36,7 +36,8 @@ class Clientes:
     @staticmethod
     def crear(dni, nombre, apellido):
         cliente = Cliente(dni,nombre, apellido)
-        Cliente.lista.append(cliente)
+        Clientes.lista.append(cliente)
+        Clientes.guardar()
         return cliente
     
     @staticmethod

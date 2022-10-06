@@ -31,7 +31,7 @@ class TestDatabase(unittest.TestCase):
         cliente_a_modificar = copy.copy(db.Clientes.buscar('28Z'))
         cliente_modificado = db.Clientes.modificar('28Z', 'Mariana', 'Pérez')
         self.assertEqual(cliente_a_modificar.nombre, 'Ana')
-        self.assertEqual(cliente_a_modificar.nombre, 'Mariana')
+        self.assertEqual(cliente_modificado.nombre, 'Mariana')
     
     def test_borrar_cliente(self):
         cliente_borrado = db.Clientes.borrar('48H')
